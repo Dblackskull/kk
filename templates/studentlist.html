@@ -1,0 +1,26 @@
+{% include 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    {% for student in students %}
+    Rollno: {{student.id}}<br>
+    Name:{{ student }}<br>
+    Department : {{student.department}}<br>
+    Roll no : {{student.rollno}}<br>
+    <a href = "studentdetail/{{ student.id }}" type="button" class="btn btn-primary">Details</a>
+    <a href = "studentupdate/{{ student.id }}" type="button" class="btn btn-success">Update</a>
+    <a href = "studentdelete/{{ student.id }}" type="button" class="btn btn-danger">Delete</a>
+    
+    <hr>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>

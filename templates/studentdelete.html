@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="main">
+        <!-- Create a Form -->
+    <form method="POST">
+            <!-- Security token by Django -->
+        {% csrf_token %}
+    
+    <h4>    Are you want to delete this item ?</h4><br>
+        <div>
+            <table style="width:100%"; border-spacing: 5px;>
+    
+                <tr>
+                    <th>Roll.No</th>
+                    <th >Name</th>
+                    <th >Department</th>
+                    <th >Phone number</th>
+                    <th >Address</th>
+                    
+                </tr>
+                                
+                 <tr>
+                    <td>{{ data.id }}</td>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.department }}</td>
+                    <td>{{ data.contact }}</td>
+                    <td>{{ data.address }}</td>
+                    
+    
+                </tr>
+    
+                    
+            </table> <br><br>
+                <input type="submit" value="Yes, Delete" />
+                <a href="/">Cancel </a>
+                
+        </div>
+    </form>
+    </div>
+    {% endblock%}
+    
+</body>
+</html>
